@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1065271770041",
+    "project_id": "babelmate",
+    "storage_bucket": "babelmate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065271770041:android:3d2e07e6f0c6a387025468",
+        "android_client_info": {
+          "package_name": "com.example.babel_mate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065271770041-n37ivd26e73m3u8v21ua3a07ls0ir5d4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXNvNIpAmpVuNEEy4DANL25Z-T4GL-wes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065271770041-n37ivd26e73m3u8v21ua3a07ls0ir5d4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
