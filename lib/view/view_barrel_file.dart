@@ -20,3 +20,4 @@ export 'package:babel_mate/repository/get_lang_repository/get_lang_repository.da
 export 'package:babel_mate/res/components/round_button.dart';
 export 'package:flutter/foundation.dart';
 export 'package:babel_mate/res/components/linear_%25_indicator_widget.dart';
+export 'package:flutter/gestures.dart';

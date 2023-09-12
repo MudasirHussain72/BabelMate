@@ -31,7 +31,12 @@ class GetStartedCirclePainter extends CustomPainter {
   }
 
   void drawText(Canvas canvas, Size size, String text) {
-    textPainter.text = TextSpan(style: textStyle, text: text);
+    textPainter.text = TextSpan(
+      style: textStyle,
+      text: text,
+      recognizer: TapGestureRecognizer()
+        ..onTap = () => print('/////////////////////////////Tap Here onTap'),
+    );
     textPainter.layout();
     textPainter.paint(canvas, Offset(50, size.height - 60));
   }
