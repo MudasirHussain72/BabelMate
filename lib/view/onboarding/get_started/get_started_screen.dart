@@ -36,13 +36,9 @@ class _GetStartedScreenState extends State<GetStartedScreen>
         body: SafeArea(
       child: Stack(
         children: [
-          AnimatedPositioned(
-            // width: selected ? 200.0 : 200.0,
-            // height: selected ? 100 : 6,
+          Positioned(
             top: selected ? 10.0 : MediaQuery.of(context).size.height / 1.1,
             right: 10,
-            duration: const Duration(seconds: 2),
-            curve: Curves.fastOutSlowIn,
             child: RichText(
               text: TextSpan(
                 text: 'Already using BabelMate? ',

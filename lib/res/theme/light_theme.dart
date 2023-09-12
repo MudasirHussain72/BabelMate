@@ -41,7 +41,7 @@ ThemeData lightTheme = ThemeData(
   textTheme: const TextTheme(
     displayLarge: TextStyle(
         fontSize: 40,
-        fontFamily: AppFonts.sfProDisplayMedium,
+        fontFamily: AppFonts.pangramSansMedium,
         color: AppColors.primaryTextColor,
         fontWeight: FontWeight.w500,
         height: 1.6),
@@ -59,7 +59,7 @@ ThemeData lightTheme = ThemeData(
         height: 1.9),
     headlineMedium: TextStyle(
         fontSize: 24,
-        fontFamily: AppFonts.sfProDisplayMedium,
+        fontFamily: AppFonts.pangramSansMedium,
         color: AppColors.primaryTextColor,
         fontWeight: FontWeight.w500,
         height: 1.6),
@@ -83,7 +83,7 @@ ThemeData lightTheme = ThemeData(
         height: 1.6),
     bodyLarge: TextStyle(
         fontSize: 17,
-        fontFamily: AppFonts.sfProDisplayBold,
+        fontFamily: AppFonts.pangramSansCompactRegular,
         color: AppColors.primaryTextColor,
         fontWeight: FontWeight.w700,
         height: 1.6),

@@ -1,3 +1,4 @@
+import 'package:babel_mate/res/fonts/fonts.dart';
 import 'package:babel_mate/view/view_barrel_file.dart';
 
 class GetStartedCirclePainter extends CustomPainter {
@@ -9,10 +10,11 @@ class GetStartedCirclePainter extends CustomPainter {
   );
 
   final TextStyle textStyle = TextStyle(
-      color: AppColors.primaryColor,
-      fontSize: 18,
-      letterSpacing: 1.2,
-      fontWeight: FontWeight.w900);
+    fontSize: 17,
+    fontFamily: AppFonts.pangramSansMedium,
+    color: AppColors.primaryColor,
+    fontWeight: FontWeight.w600,
+  );
 
   @override
   void paint(Canvas canvas, Size size) {
