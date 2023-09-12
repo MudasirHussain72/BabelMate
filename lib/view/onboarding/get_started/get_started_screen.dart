@@ -1,3 +1,4 @@
+import 'package:babel_mate/utils/routes/routes_barrel_file.dart';
 import 'package:babel_mate/view/view_barrel_file.dart';
 
 class GetStartedScreen extends StatefulWidget {
@@ -94,10 +95,14 @@ class _GetStartedScreenState extends State<GetStartedScreen>
             ),
           ),
           //get started button
-          CustomPaint(
-            size: Size(MediaQuery.of(context).size.width,
-                MediaQuery.of(context).size.height),
-            painter: GetStartedCirclePainter(),
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(
+                context, RouteName.userLanguagesSelectionScreen),
+            child: CustomPaint(
+              size: Size(MediaQuery.of(context).size.width,
+                  MediaQuery.of(context).size.height),
+              painter: GetStartedCirclePainter(),
+            ),
           ),
         ],
       ),

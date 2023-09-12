@@ -11,12 +11,12 @@ ThemeData lightTheme = ThemeData(
       background: AppColors.secondaryColor,
       onBackground: AppColors.primaryTextColor,
       primary: AppColors.primaryColor,
-      onPrimary: AppColors.appBarGreyColor),
+      onPrimary: AppColors.appBarPrimaryColor),
   //  useMaterial3: true,
   appBarTheme: const AppBarTheme(
     elevation: 0,
     // color: AppColors.whiteColor,
-    backgroundColor: AppColors.appBarGreyColor,
+    backgroundColor: AppColors.appBarPrimaryColor,
     centerTitle: true,
     systemOverlayStyle:
         SystemUiOverlayStyle(statusBarColor: Colors.transparent),

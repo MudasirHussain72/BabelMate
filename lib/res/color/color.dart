@@ -4,6 +4,8 @@ class AppColors {
   // main colors
   static const Color primaryColor = Color(0xff411A72);
   static const Color secondaryColor = Color(0xffDDE771);
+  //onboard colors
+  static const Color onboardPercentIndicatorColor = Color(0xff311457);
   // main dark colors
   static const Color primaryDarkColor = Color(0xff141A1F);
   static const Color secondaryDarkColor = Color(0xff202934);
@@ -14,8 +16,9 @@ class AppColors {
   static const Color inputDecorationLightColor = Color(0xffF6F8F8);
   static const Color inputDecorationDarkColor = Color(0xff202934);
   // appbar colours
-  static const Color appBarGreyColor = Color(0xffF6F8F8);
-  static const Color darkAppBarColor = Color(0xff202934);
+  static const Color appBarPrimaryColor = Color(0xff411A72);
+  // static const Color appBarGreyColor = Color(0xffF6F8F8);
+  // static const Color darkAppBarColor = Color(0xff202934);
   // text colors
   static const Color primaryTextColor = Color(0xffffffff);
   static const Color secondaryTextdarkColor = Color(0xff0F0425);
