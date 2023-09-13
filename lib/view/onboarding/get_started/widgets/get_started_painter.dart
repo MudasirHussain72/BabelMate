@@ -9,7 +9,7 @@ class GetStartedCirclePainter extends CustomPainter {
     textDirection: TextDirection.ltr,
   );
 
-  final TextStyle textStyle = TextStyle(
+  final TextStyle textStyle = const TextStyle(
     fontSize: 17,
     fontFamily: AppFonts.pangramSansMedium,
     color: AppColors.primaryColor,
@@ -35,6 +35,7 @@ class GetStartedCirclePainter extends CustomPainter {
       style: textStyle,
       text: text,
       recognizer: TapGestureRecognizer()
+        // ignore: avoid_print
         ..onTap = () => print('/////////////////////////////Tap Here onTap'),
     );
     textPainter.layout();

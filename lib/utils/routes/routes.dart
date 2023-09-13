@@ -12,13 +12,13 @@ class Routes {
       // case RouteName.getStartedScreen:
       //   return _platformPageRoute(child: GetStartedScreen());
       case RouteName.userLanguagesSelectionScreen:
-        return _platformPageRoute(child: UserLanguagesSelectionScreen());
+        return _platformPageRoute(child: const UserLanguagesSelectionScreen());
       case RouteName.exchangeLanguagesSelectionScreen:
-        return _platformPageRoute(child: ExchangeLanguagesSelectionScreen());
+        return _platformPageRoute(child: const ExchangeLanguagesSelectionScreen());
       case RouteName.interestsSelectionScreen:
-        return _platformPageRoute(child: InterestsSelectionScreen());
+        return _platformPageRoute(child: const InterestsSelectionScreen());
       case RouteName.ageSelectionScreen:
-        return _platformPageRoute(child: AgeSelectionScreen());
+        return _platformPageRoute(child: const AgeSelectionScreen());
       default:
         return MaterialPageRoute(builder: (_) {
           return Scaffold(

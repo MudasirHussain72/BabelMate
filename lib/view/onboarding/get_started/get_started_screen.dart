@@ -60,7 +60,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                             ..onTap = () => Navigator.pushNamed(
                                 context, RouteName.ageSelectionScreen),
                           text: 'Login',
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.w400,
                               color: AppColors.primaryTextColor)),
                     ],

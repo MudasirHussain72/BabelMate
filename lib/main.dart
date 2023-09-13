@@ -2,11 +2,9 @@ import 'package:babel_mate/res/constants.dart';
 import 'package:babel_mate/res/theme/light_theme.dart';
 import 'package:babel_mate/utils/routes/routes.dart';
 import 'package:babel_mate/utils/routes/routes_barrel_file.dart';
-import 'package:babel_mate/view_model/controllers/onboarding/user_languages/user_lang_selction_controller.dart';
-import 'package:flutter/material.dart';
+import 'package:babel_mate/view/view_barrel_file.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -20,7 +18,7 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -33,6 +31,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
             create: (context) => UserLanguagesSelectionController()),
+        ChangeNotifierProvider(
+            create: (context) => ExchangeLanguagesSelectionController()),
       ],
       child: MaterialApp(
         title: applicationName,

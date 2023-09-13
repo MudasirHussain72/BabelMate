@@ -16,7 +16,9 @@ class _UserLanguagesSelectionScreenState
     super.initState();
     var provider =
         Provider.of<UserLanguagesSelectionController>(context, listen: false);
-    provider.getLanguagesApi();
+    if (provider.languages.data == null) {
+      provider.getLanguagesApi();
+    }
   }
 
   @override
@@ -38,7 +40,7 @@ class _UserLanguagesSelectionScreenState
                   child: Text(
                     'Try again${value.languages.message}',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.black),
+                    style: const TextStyle(color: Colors.black),
                   ),
                 )),
               );
@@ -55,7 +57,7 @@ class _UserLanguagesSelectionScreenState
                     children: [
                       LinearPercentIndicatorWidget(percent: 0.2),
                       Padding(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         child: Text('I Speak',
                             style: Theme.of(context)
                                 .textTheme
@@ -64,7 +66,7 @@ class _UserLanguagesSelectionScreenState
                       ),
                       Expanded(
                         child: ListView.builder(
-                            physics: BouncingScrollPhysics(
+                            physics: const BouncingScrollPhysics(
                                 parent: AlwaysScrollableScrollPhysics()),
                             itemCount: value.languages.data!.languages!.length,
                             itemBuilder: (context, index) {
@@ -74,14 +76,14 @@ class _UserLanguagesSelectionScreenState
                                   onTap: () => value.toggleLanguageSelection(
                                       lang), // Toggle isSelected
                                   child: Container(
-                                    margin: EdgeInsets.only(
+                                    margin: const EdgeInsets.only(
                                         bottom: 10, left: 10, right: 10),
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     decoration: BoxDecoration(
                                         color: lang.isSelected == true
-                                            ? Color(
+                                            ? const Color(
                                                 0xff4F1F86) // Change color for selected language
-                                            : Color(0xff592498),
+                                            : const Color(0xff592498),
                                         borderRadius:
                                             BorderRadius.circular(50)),
                                     child: Row(
@@ -96,9 +98,9 @@ class _UserLanguagesSelectionScreenState
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            SizedBox(width: 10),
-                                            Text('🇵🇰'),
-                                            SizedBox(width: 10),
+                                            const SizedBox(width: 10),
+                                            const Text('🇵🇰'),
+                                            const SizedBox(width: 10),
                                             Text(lang.name.toString(),
                                                 style: Theme.of(context)
                                                     .textTheme

@@ -7,15 +7,15 @@ class LanguagesModel {
     if (json['languages'] != null) {
       languages = <Languages>[];
       json['languages'].forEach((v) {
-        languages!.add(new Languages.fromJson(v));
+        languages!.add(Languages.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.languages != null) {
-      data['languages'] = this.languages!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    if (languages != null) {
+      data['languages'] = languages!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -35,10 +35,10 @@ class Languages {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['isoCode'] = this.isoCode;
-    data['name'] = this.name;
-    data['isSelected'] = this.isSelected; // Include isSelected in the JSON data
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['isoCode'] = isoCode;
+    data['name'] = name;
+    data['isSelected'] = isSelected; // Include isSelected in the JSON data
     return data;
   }
 }

@@ -1,6 +1,6 @@
 import 'package:babel_mate/view/view_barrel_file.dart';
-import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class LinearPercentIndicatorWidget extends StatelessWidget {
   double percent;
   LinearPercentIndicatorWidget({super.key, required this.percent});

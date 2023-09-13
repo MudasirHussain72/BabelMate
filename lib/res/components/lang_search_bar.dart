@@ -15,7 +15,7 @@ class LanguageSearchBar extends StatelessWidget {
     return TextField(
       controller: controller,
       onChanged: onTextChanged,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         hintText: 'Search for languages...',
         prefixIcon: Icon(Icons.search),
       ),

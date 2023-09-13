@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:babel_mate/data/remote/AppException.dart';
+import 'package:babel_mate/data/remote/app_exception.dart';
 import 'package:babel_mate/data/remote/network/base_api_services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
@@ -13,7 +13,7 @@ class NetworkApiServices extends BaseApiServices {
     dynamic responseJson;
     try {
       final response =
-          await http.get(Uri.parse(url)).timeout(Duration(seconds: 30));
+          await http.get(Uri.parse(url)).timeout(const Duration(seconds: 30));
       responseJson = returnResponse(response);
     } on SocketException {
       throw InternetException();
@@ -37,7 +37,7 @@ class NetworkApiServices extends BaseApiServices {
       final response = await http.get(Uri.parse(url), headers: {
         'Authorization':
             'w7e7OrQ30Ps1Rs2SRr7w1dkM4R96vY27KXuF9cp9NLVvjjuAAsGAVABKUYVx'
-      }).timeout(Duration(seconds: 30));
+      }).timeout(const Duration(seconds: 30));
       responseJson = returnResponse(response);
     } on SocketException {
       throw InternetException();
@@ -61,7 +61,7 @@ class NetworkApiServices extends BaseApiServices {
     try {
       final response = await http
           .post(Uri.parse(url), body: data)
-          .timeout(Duration(seconds: 10));
+          .timeout(const Duration(seconds: 10));
       responseJson = returnResponse(response);
     } on SocketException {
       throw InternetException();
@@ -142,7 +142,7 @@ class NetworkApiServices extends BaseApiServices {
       );
 
       request.fields.addAll(data);
-      var response = await request.send().timeout(Duration(seconds: 20));
+      var response = await request.send().timeout(const Duration(seconds: 20));
 
       responseJson = response;
       responseJson = returnMultipartResponse(response);
@@ -150,7 +150,9 @@ class NetworkApiServices extends BaseApiServices {
       throw InternetException('No Internet Connection');
     }
 
-    print(responseJson);
+    if (kDebugMode) {
+      print(responseJson);
+    }
     return responseJson;
   }
 

@@ -1,6 +1,6 @@
 import '../../../../view/view_barrel_file.dart';
 
-class UserLanguagesSelectionController with ChangeNotifier {
+class ExchangeLanguagesSelectionController with ChangeNotifier {
   final _repo = GetLangRepository();
   ApiResponse<LanguagesModel> languages = ApiResponse.loading();
   setLanguages(ApiResponse<LanguagesModel> response) {

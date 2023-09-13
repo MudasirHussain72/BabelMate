@@ -1,4 +1,4 @@
-import 'package:babel_mate/data/remote/response/Status.dart';
+import 'package:babel_mate/data/remote/response/status.dart';
 
 class ApiResponse<T> {
   Status? status;
