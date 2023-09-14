@@ -36,10 +36,10 @@ class AppColors {
 //textfeld fill colur
   static const Color inputTextBorderColor = Color.fromRGBO(19, 103, 33, 1);
   static const Color hintColor = Color.fromRGBO(114, 114, 114, 1);
-  static const Color textfieldFilledColor = Color(0xffF6F8F8);
+  static const Color textfieldFilledColor = Color(0xff523082);
 
   static const Color textFieldDefaultFocus = Color(0xfff5f5f6);
-  static const Color textFieldDefaultBorderColor = Color(0xffDFDFE1);
+  static const Color textFieldDefaultBorderColor = Color(0xff5A3888);
   static const Color textFieldFocusBorderColor = Color.fromRGBO(19, 103, 33, 1);
 
   static const Color primaryButtonColor = Color(0xff242424);

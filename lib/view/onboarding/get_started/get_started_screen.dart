@@ -2,8 +2,9 @@ import 'package:babel_mate/utils/routes/routes_barrel_file.dart';
 import 'package:babel_mate/view/view_barrel_file.dart';
 
 class GetStartedScreen extends StatefulWidget {
-  final Animation<double> animation;
-  const GetStartedScreen({super.key, required this.animation});
+  // final Animation<double> animation;
+  final animation;
+  const GetStartedScreen({super.key, this.animation});
 
   @override
   State<GetStartedScreen> createState() => _GetStartedScreenState();
@@ -58,7 +59,7 @@ class _GetStartedScreenState extends State<GetStartedScreen>
                       TextSpan(
                           recognizer: TapGestureRecognizer()
                             ..onTap = () => Navigator.pushNamed(
-                                context, RouteName.ageSelectionScreen),
+                                context, RouteName.loginScreen),
                           text: 'Login',
                           style: const TextStyle(
                               fontWeight: FontWeight.w400,

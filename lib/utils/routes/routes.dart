@@ -1,3 +1,6 @@
+import 'package:babel_mate/view/forgot_password/forgot_pass_screen.dart';
+import 'package:babel_mate/view/login/login_screen.dart';
+import 'package:babel_mate/view/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import '../routes/routes_barrel_file.dart';
 
@@ -9,16 +12,24 @@ class Routes {
       case RouteName.splashScreen:
         return _platformPageRoute(child: const SplashScreen());
       //onboarding view route
-      // case RouteName.getStartedScreen:
-      //   return _platformPageRoute(child: GetStartedScreen());
+      case RouteName.getStartedScreen:
+        return _platformPageRoute(child: GetStartedScreen());
       case RouteName.userLanguagesSelectionScreen:
         return _platformPageRoute(child: const UserLanguagesSelectionScreen());
       case RouteName.exchangeLanguagesSelectionScreen:
-        return _platformPageRoute(child: const ExchangeLanguagesSelectionScreen());
+        return _platformPageRoute(
+            child: const ExchangeLanguagesSelectionScreen());
       case RouteName.interestsSelectionScreen:
         return _platformPageRoute(child: const InterestsSelectionScreen());
       case RouteName.ageSelectionScreen:
         return _platformPageRoute(child: const AgeSelectionScreen());
+      //registration view route
+      case RouteName.loginScreen:
+        return _platformPageRoute(child: LoginScreen());
+      case RouteName.signUpScreen:
+        return _platformPageRoute(child: const SignupScreen());
+      case RouteName.forgotScreen:
+        return _platformPageRoute(child: const ForgotPasswordScreen());
       default:
         return MaterialPageRoute(builder: (_) {
           return Scaffold(

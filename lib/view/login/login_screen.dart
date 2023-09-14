@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
-  final Animation<double> animation;
-  const LoginScreen({super.key, required this.animation});
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -10,19 +9,6 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen>
     with TickerProviderStateMixin {
-  bool visible = false;
-  @override
-  void initState() {
-    super.initState();
-    widget.animation.addListener(() {
-      if (widget.animation.value > .3) {
-        setState(() {
-          visible = true;
-        });
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
