@@ -3,6 +3,7 @@ import 'package:babel_mate/res/theme/light_theme.dart';
 import 'package:babel_mate/utils/routes/routes.dart';
 import 'package:babel_mate/utils/routes/routes_barrel_file.dart';
 import 'package:babel_mate/view/view_barrel_file.dart';
+import 'package:babel_mate/view_model/controllers/signup/signup_controller.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'firebase_options.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
             create: (context) => UserLanguagesSelectionController()),
         ChangeNotifierProvider(
             create: (context) => ExchangeLanguagesSelectionController()),
+        ChangeNotifierProvider(create: (context) => SignUpController()),
       ],
       child: MaterialApp(
         title: applicationName,
