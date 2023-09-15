@@ -1,16 +1,16 @@
 import 'package:babel_mate/view/view_barrel_file.dart';
 
-class SignupEmailTextFieldWidget extends StatelessWidget {
+class LoginEmailTextFieldWidget extends StatelessWidget {
   bool selected;
-  SignupEmailTextFieldWidget({super.key, required this.selected});
+  LoginEmailTextFieldWidget({super.key, required this.selected});
 
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width * 1;
-    return Consumer<SignUpController>(
+    return Consumer<LoginController>(
         builder: (context, provider, child) => AnimatedPositioned(
             top: selected
-                ? MediaQuery.of(context).size.height * .38
+                ? MediaQuery.of(context).size.height * .22
                 : MediaQuery.of(context).size.height / .7,
             duration: const Duration(seconds: 2),
             curve: Curves.fastOutSlowIn,
@@ -22,7 +22,7 @@ class SignupEmailTextFieldWidget extends StatelessWidget {
                 child: TextFormFieldWidget(
                   controller: provider.emailController,
                   focusNode: provider.emailFocusNode,
-                  hintText: 'Email',
+                  hintText: 'Email OR Username',
                   prefixIcon: Icons.email_outlined,
                   onFiledSubmittedValue: (newValue) => Utils.fieldFocus(context,
                       provider.emailFocusNode, provider.passwordFocusNode),

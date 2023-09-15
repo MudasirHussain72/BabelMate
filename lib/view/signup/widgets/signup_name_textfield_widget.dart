@@ -1,14 +1,15 @@
 import 'package:babel_mate/view/view_barrel_file.dart';
 
 class SignupNameTextFieldWidget extends StatelessWidget {
-  const SignupNameTextFieldWidget({super.key});
+  bool selected;
+  SignupNameTextFieldWidget({super.key, required this.selected});
 
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width * 1;
     return Consumer<SignUpController>(
         builder: (context, provider, child) => AnimatedPositioned(
-            top: provider.selected
+            top: selected
                 ? MediaQuery.of(context).size.height * .3
                 : MediaQuery.of(context).size.height / .8,
             // right: MediaQuery.of(context).size.width / 3.4,

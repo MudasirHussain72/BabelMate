@@ -8,14 +8,12 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-  // bool selected = false;
+  bool selected = false;
   @override
   void initState() {
     super.initState();
-    var provider = Provider.of<SignUpController>(context, listen: false);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      // setState(() => selected = true);
-      provider.setSelected(true);
+      setState(() => selected = true);
     });
   }
 
@@ -31,20 +29,20 @@ class _SignupScreenState extends State<SignupScreen> {
         child: SizedBox(
           width: width,
           height: height,
-          child: const Stack(
+          child: Stack(
             children: [
               // Animated Signup Text Widget
-              SignupTextWidget(),
+              SignupTextWidget(selected: selected),
               // Animated username Text Field Widget
-              SignupUsernameTextFieldWidget(),
+              SignupUsernameTextFieldWidget(selected: selected),
               // Animated Name Text Field Widget
-              SignupNameTextFieldWidget(),
+              SignupNameTextFieldWidget(selected: selected),
               // Animated Email Text Field Widget
-              SignupEmailTextFieldWidget(),
+              SignupEmailTextFieldWidget(selected: selected),
               // Animated Password Text Field Widget
-              SignupPasswordTextFieldWidget(),
+              SignupPasswordTextFieldWidget(selected: selected),
               // Animated SIGN UP Button Field Widget
-              SignupButtonWidget(),
+              SignupButtonWidget(selected: selected),
             ],
           ),
         ),

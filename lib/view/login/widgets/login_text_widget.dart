@@ -1,13 +1,13 @@
 import 'package:babel_mate/utils/routes/routes_barrel_file.dart';
 import 'package:babel_mate/view/view_barrel_file.dart';
 
-class SignupTextWidget extends StatelessWidget {
+class LoginTextWidget extends StatelessWidget {
   bool selected;
-  SignupTextWidget({super.key, required this.selected});
+  LoginTextWidget({super.key, required this.selected});
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<SignUpController>(
+    return Consumer<LoginController>(
         builder: (context, provider, child) => AnimatedPositioned(
               top: selected
                   ? MediaQuery.of(context).size.height * .1
@@ -18,12 +18,12 @@ class SignupTextWidget extends StatelessWidget {
               child: RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
-                      text: 'Sign up\n',
+                      text: 'Login\n',
                       style:
                           Theme.of(context).textTheme.displaySmall!.copyWith(),
                       children: <TextSpan>[
                         TextSpan(
-                            text: 'Existing user? ',
+                            text: 'No account? ',
                             style: Theme.of(context)
                                 .textTheme
                                 .bodySmall!
@@ -31,8 +31,8 @@ class SignupTextWidget extends StatelessWidget {
                         TextSpan(
                             recognizer: TapGestureRecognizer()
                               ..onTap = () => Navigator.pushNamed(
-                                  context, RouteName.loginScreen),
-                            text: 'Login',
+                                  context, RouteName.signUpScreen),
+                            text: 'Signup',
                             style: Theme.of(context)
                                 .textTheme
                                 .bodySmall!
