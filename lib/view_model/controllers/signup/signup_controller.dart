@@ -26,4 +26,5 @@ class SignUpController with ChangeNotifier {
     _showPass = value;
     notifyListeners();
   }
+  
 }

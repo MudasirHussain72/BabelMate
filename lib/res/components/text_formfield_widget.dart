@@ -4,6 +4,9 @@ import 'package:babel_mate/view/view_barrel_file.dart';
 class TextFormFieldWidget extends StatelessWidget {
   String hintText;
   IconData prefixIcon;
+  Widget suffixIconWidget;
+  bool showSuffixIcon;
+  bool obscureText;
   TextEditingController controller;
   FocusNode focusNode;
   final FormFieldSetter onFiledSubmittedValue;
@@ -11,6 +14,9 @@ class TextFormFieldWidget extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.prefixIcon,
+    this.suffixIconWidget = const SizedBox(),
+    this.showSuffixIcon = false,
+    this.obscureText = false,
     required this.controller,
     required this.focusNode,
     required this.onFiledSubmittedValue,
@@ -22,6 +28,7 @@ class TextFormFieldWidget extends StatelessWidget {
       controller: controller,
       focusNode: focusNode,
       onFieldSubmitted: onFiledSubmittedValue,
+      obscureText: obscureText,
       decoration: InputDecoration(
         fillColor: AppColors.textfieldFilledColor,
         hintText: hintText,
@@ -29,6 +36,9 @@ class TextFormFieldWidget extends StatelessWidget {
           prefixIcon,
           color: AppColors.primaryIconColor,
         ),
+        suffixIcon: showSuffixIcon
+            ? suffixIconWidget
+            : SizedBox(),
         hintStyle: TextStyle(
             fontSize: 14,
             fontFamily: AppFonts.pangramSansCompactRegular,

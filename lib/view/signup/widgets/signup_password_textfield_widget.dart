@@ -20,12 +20,26 @@ class SignupPasswordTextFieldWidget extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormFieldWidget(
-                  controller: provider.passwordController,
-                  focusNode: provider.passwordFocusNode,
-                  hintText: 'Password',
-                  prefixIcon: Icons.lock_outlined,
-                  onFiledSubmittedValue: (newValue) {},
-                ),
+                    controller: provider.passwordController,
+                    focusNode: provider.passwordFocusNode,
+                    hintText: 'Password',
+                    prefixIcon: Icons.lock_outlined,
+                    onFiledSubmittedValue: (newValue) {},
+                    showSuffixIcon: true,
+                    obscureText:
+                        !provider.showPass, // Inverse of showPass value
+                    suffixIconWidget: GestureDetector(
+                      onTap: () {
+                        provider.setShowPass(
+                            !provider.showPass); // Toggle showPass value
+                      },
+                      child: Icon(
+                        provider.showPass
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                        color: AppColors.primaryIconColor,
+                      ),
+                    )),
               ),
             )));
   }
