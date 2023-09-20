@@ -21,7 +21,18 @@ class SignupButtonWidget extends StatelessWidget {
               child: RoundButton(
                 loading: provider.loading,
                 title: 'SIGN UP',
-                onPress: () {},
+                onPress: () {
+                  if (provider.formKey.currentState!.validate()) {
+                    if (provider.userNameController.text.isNotEmpty ||
+                        provider.nameController.text.isNotEmpty ||
+                        provider.emailController.text.isNotEmpty ||
+                        provider.passwordController.text.isNotEmpty) {
+                      provider.signup(context);
+                    } else {
+                      Utils.toasstMessage('Please enter correct data');
+                    }
+                  }
+                },
                 borderRadius: 50,
                 textColor: AppColors.primaryColor,
                 buttonColor: AppColors.secondaryColor,

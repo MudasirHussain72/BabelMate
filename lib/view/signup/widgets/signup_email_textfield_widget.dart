@@ -23,6 +23,7 @@ class SignupEmailTextFieldWidget extends StatelessWidget {
                   controller: provider.emailController,
                   focusNode: provider.emailFocusNode,
                   hintText: 'Email',
+                  keyboardType: TextInputType.emailAddress,
                   prefixIcon: Icons.email_outlined,
                   onFiledSubmittedValue: (newValue) => Utils.fieldFocus(context,
                       provider.emailFocusNode, provider.passwordFocusNode),

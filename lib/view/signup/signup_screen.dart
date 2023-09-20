@@ -31,22 +31,26 @@ class _SignupScreenState extends State<SignupScreen> {
         child: SizedBox(
           width: width,
           height: height,
-          child: Stack(
-            children: [
-              // Animated Signup Text Widget
-              SignupTextWidget(selected: selected),
-              // Animated username Text Field Widget
-              SignupUsernameTextFieldWidget(selected: selected),
-              // Animated Name Text Field Widget
-              SignupNameTextFieldWidget(selected: selected),
-              // Animated Email Text Field Widget
-              SignupEmailTextFieldWidget(selected: selected),
-              // Animated Password Text Field Widget
-              SignupPasswordTextFieldWidget(selected: selected),
-              // Animated SIGN UP Button Field Widget
-              SignupButtonWidget(selected: selected),
-            ],
-          ),
+          child: Consumer<SignUpController>(
+              builder: (context, provider, child) => Form(
+                    key: provider.formKey,
+                    child: Stack(
+                      children: [
+                        // Animated Signup Text Widget
+                        SignupTextWidget(selected: selected),
+                        // Animated username Text Field Widget
+                        SignupUsernameTextFieldWidget(selected: selected),
+                        // Animated Name Text Field Widget
+                        SignupNameTextFieldWidget(selected: selected),
+                        // Animated Email Text Field Widget
+                        SignupEmailTextFieldWidget(selected: selected),
+                        // Animated Password Text Field Widget
+                        SignupPasswordTextFieldWidget(selected: selected),
+                        // Animated SIGN UP Button Field Widget
+                        SignupButtonWidget(selected: selected),
+                      ],
+                    ),
+                  )),
         ),
       ),
     );

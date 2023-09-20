@@ -9,12 +9,14 @@ class TextFormFieldWidget extends StatelessWidget {
   bool obscureText;
   TextEditingController controller;
   FocusNode focusNode;
+  TextInputType keyboardType;
   final FormFieldSetter onFiledSubmittedValue;
   TextFormFieldWidget({
     super.key,
     required this.hintText,
     required this.prefixIcon,
     this.suffixIconWidget = const SizedBox(),
+    this.keyboardType = TextInputType.text,
     this.showSuffixIcon = false,
     this.obscureText = false,
     required this.controller,
@@ -29,6 +31,7 @@ class TextFormFieldWidget extends StatelessWidget {
       focusNode: focusNode,
       onFieldSubmitted: onFiledSubmittedValue,
       obscureText: obscureText,
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         fillColor: AppColors.textfieldFilledColor,
         hintText: hintText,
@@ -36,9 +39,7 @@ class TextFormFieldWidget extends StatelessWidget {
           prefixIcon,
           color: AppColors.primaryIconColor,
         ),
-        suffixIcon: showSuffixIcon
-            ? suffixIconWidget
-            : SizedBox(),
+        suffixIcon: showSuffixIcon ? suffixIconWidget : SizedBox(),
         hintStyle: TextStyle(
             fontSize: 14,
             fontFamily: AppFonts.pangramSansCompactRegular,

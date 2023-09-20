@@ -1,5 +1,6 @@
 import 'package:babel_mate/view/forgot_password/forgot_pass_screen.dart';
 import 'package:babel_mate/view/login/login_screen.dart';
+import 'package:babel_mate/view/otp/otp_screen.dart';
 import 'package:babel_mate/view/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import '../routes/routes_barrel_file.dart';
@@ -28,6 +29,8 @@ class Routes {
         return _platformPageRoute(child: LoginScreen());
       case RouteName.signUpScreen:
         return _platformPageRoute(child: const SignupScreen());
+      case RouteName.otpScreen:
+        return _platformPageRoute(child: const OtpScreen());
       case RouteName.forgotScreen:
         return _platformPageRoute(child: const ForgotPasswordScreen());
       default:

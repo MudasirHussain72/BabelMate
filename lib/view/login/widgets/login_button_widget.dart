@@ -21,7 +21,9 @@ class LoginButtonWidget extends StatelessWidget {
               child: RoundButton(
                 loading: provider.loading,
                 title: 'LOGIN',
-                onPress: () {},
+                onPress: () {
+                  provider.login();
+                },
                 borderRadius: 50,
                 textColor: AppColors.primaryColor,
                 buttonColor: AppColors.secondaryColor,

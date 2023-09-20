@@ -12,6 +12,7 @@ class RouteName {
   static const String loginScreen = 'login_screen';
   static const String signUpScreen = 'signup_screen';
   static const String forgotScreen = 'forgot_screen';
+  static const String otpScreen = 'otpScreen';
 
   //dashboard
   static const String dashboardScreen = 'dashboard_screen';

@@ -23,6 +23,7 @@ class LoginEmailTextFieldWidget extends StatelessWidget {
                   controller: provider.emailController,
                   focusNode: provider.emailFocusNode,
                   hintText: 'Email OR Username',
+                  keyboardType: TextInputType.emailAddress,
                   prefixIcon: Icons.email_outlined,
                   onFiledSubmittedValue: (newValue) => Utils.fieldFocus(context,
                       provider.emailFocusNode, provider.passwordFocusNode),

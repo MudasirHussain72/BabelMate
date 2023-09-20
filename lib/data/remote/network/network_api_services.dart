@@ -75,10 +75,10 @@ class NetworkApiServices extends BaseApiServices {
     return responseJson;
   }
 
-  dynamic headers = {
-    "Content-Type": "application/x-www-form-urlencoded",
-    'Accept': 'application/json',
-  };
+  // dynamic headers = {
+  //   "Content-Type": "application/x-www-form-urlencoded",
+  //   'Accept': 'application/json',
+  // };
 
   @override
   Future<dynamic> postMultipartRequest(
