@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // main colors
-  static const Color primaryColor = Color(0xffFFFFFF);
-  static const Color secondaryColor = Color(0xffEEF1F3);
+  static const Color primaryColor = Color(0xff411A72);
+  static const Color secondaryColor = Color(0xffDDE771);
+  //onboard colors
+  static const Color onboardPercentIndicatorColor = Color(0xff311457);
   // main dark colors
   static const Color primaryDarkColor = Color(0xff141A1F);
   static const Color secondaryDarkColor = Color(0xff202934);
@@ -14,29 +16,29 @@ class AppColors {
   static const Color inputDecorationLightColor = Color(0xffF6F8F8);
   static const Color inputDecorationDarkColor = Color(0xff202934);
   // appbar colours
-  static const Color appBarGreyColor = Color(0xffF6F8F8);
-  static const Color darkAppBarColor = Color(0xff202934);
+  static const Color appBarPrimaryColor = Color(0xff411A72);
+  // static const Color appBarGreyColor = Color(0xffF6F8F8);
+  // static const Color darkAppBarColor = Color(0xff202934);
   // text colors
-  static const Color primaryTextTextColor = Color(0xff000000);
+  static const Color primaryTextColor = Color(0xffffffff);
   static const Color secondaryTextdarkColor = Color(0xff0F0425);
-  static const Color secondaryTextColor = Color(0xff9694B8);
+  static const Color secondaryTextColor = Color(0xffA28DB7);
   static const Color feedCardTitleColor = Color(0xff0E0A47);
   static const Color feedCardTitleDarkColor = Color(0xff797F85);
   // icon colours
-  static const Color primaryIconColor = Color(0xff242424);
+  static const Color primaryIconColor = Color(0xffA28DB7);
   static const Color iconDarkColor = Color(0xff202934);
   static const Color iconBlueColor = Color(0xff115CCD);
   static const Color primaryDarkModeColor = Color(0xff115CCD);
-
   static const Color iconBackgroundColor = Color(0xffdfdfe1);
   static const Color successColor = Color(0xff11CD95);
 //textfeld fill colur
   static const Color inputTextBorderColor = Color.fromRGBO(19, 103, 33, 1);
   static const Color hintColor = Color.fromRGBO(114, 114, 114, 1);
-  static const Color textfieldFilledColor = Color(0xffF6F8F8);
+  static const Color textfieldFilledColor = Color(0xff523082);
 
   static const Color textFieldDefaultFocus = Color(0xfff5f5f6);
-  static const Color textFieldDefaultBorderColor = Color(0xffDFDFE1);
+  static const Color textFieldDefaultBorderColor = Color(0xff62448B);
   static const Color textFieldFocusBorderColor = Color.fromRGBO(19, 103, 33, 1);
 
   static const Color primaryButtonColor = Color(0xff242424);

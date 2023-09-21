@@ -1,5 +1,3 @@
-import 'package:babel_mate/res/assets_name/image_assets.dart';
-import 'package:babel_mate/view_model/services/splash_services/splash_services.dart';
 import 'package:babel_mate/view/view_barrel_file.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -22,12 +20,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200.withOpacity(0.8),
+      backgroundColor: AppColors.primaryColor.withOpacity(0.8),
       body: Center(
         child: SvgPicture.asset(
           ImageAssets.splashLogo,
           width: 50,
           height: 50,
+          // color: AppColors.secondaryColor,
         ),
       ),
     );

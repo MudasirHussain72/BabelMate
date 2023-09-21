@@ -6,17 +6,17 @@ import 'package:flutter/services.dart';
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   primarySwatch: AppColors.primaryMaterialColor,
-  scaffoldBackgroundColor: Colors.white,
+  scaffoldBackgroundColor: AppColors.primaryColor,
   colorScheme: const ColorScheme.light(
       background: AppColors.secondaryColor,
-      onBackground: AppColors.primaryTextTextColor,
+      onBackground: AppColors.primaryTextColor,
       primary: AppColors.primaryColor,
-      onPrimary: AppColors.appBarGreyColor),
+      onPrimary: AppColors.appBarPrimaryColor),
   //  useMaterial3: true,
   appBarTheme: const AppBarTheme(
     elevation: 0,
     // color: AppColors.whiteColor,
-    backgroundColor: AppColors.appBarGreyColor,
+    backgroundColor: AppColors.appBarPrimaryColor,
     centerTitle: true,
     systemOverlayStyle:
         SystemUiOverlayStyle(statusBarColor: Colors.transparent),
@@ -24,8 +24,8 @@ ThemeData lightTheme = ThemeData(
         fontSize: 19,
         fontWeight: FontWeight.w700,
         fontFamily: AppFonts.pangramSansMedium,
-        color: AppColors.primaryTextTextColor),
-    iconTheme: IconThemeData(color: AppColors.primaryTextTextColor),
+        color: AppColors.primaryTextColor),
+    iconTheme: IconThemeData(color: AppColors.primaryTextColor),
   ),
   inputDecorationTheme: const InputDecorationTheme(
     fillColor: AppColors.secondaryColor,
@@ -41,8 +41,8 @@ ThemeData lightTheme = ThemeData(
   textTheme: const TextTheme(
     displayLarge: TextStyle(
         fontSize: 40,
-        fontFamily: AppFonts.sfProDisplayMedium,
-        color: AppColors.primaryTextTextColor,
+        fontFamily: AppFonts.pangramSansMedium,
+        color: AppColors.primaryTextColor,
         fontWeight: FontWeight.w500,
         height: 1.6),
     displayMedium: TextStyle(
@@ -54,13 +54,13 @@ ThemeData lightTheme = ThemeData(
     displaySmall: TextStyle(
         fontSize: 28,
         fontFamily: AppFonts.pangramSansMedium,
-        color: AppColors.primaryTextTextColor,
+        color: AppColors.primaryTextColor,
         fontWeight: FontWeight.w500,
         height: 1.9),
     headlineMedium: TextStyle(
         fontSize: 24,
-        fontFamily: AppFonts.sfProDisplayMedium,
-        color: AppColors.primaryTextTextColor,
+        fontFamily: AppFonts.pangramSansMedium,
+        color: AppColors.primaryTextColor,
         fontWeight: FontWeight.w500,
         height: 1.6),
     headlineSmall: TextStyle(
@@ -78,13 +78,13 @@ ThemeData lightTheme = ThemeData(
     titleMedium: TextStyle(
         fontSize: 17,
         fontFamily: AppFonts.pangramSansCompactRegular,
-        color: AppColors.primaryTextTextColor,
+        color: AppColors.primaryTextColor,
         fontWeight: FontWeight.w700,
         height: 1.6),
     bodyLarge: TextStyle(
         fontSize: 17,
-        fontFamily: AppFonts.sfProDisplayBold,
-        color: AppColors.primaryTextTextColor,
+        fontFamily: AppFonts.pangramSansCompactRegular,
+        color: AppColors.primaryTextColor,
         fontWeight: FontWeight.w700,
         height: 1.6),
     bodyMedium: TextStyle(

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:babel_mate/view/view_barrel_file.dart';
 import '../routes/routes_barrel_file.dart';
 
 class Routes {
@@ -9,16 +9,28 @@ class Routes {
       case RouteName.splashScreen:
         return _platformPageRoute(child: const SplashScreen());
       //onboarding view route
-      // case RouteName.getStartedScreen:
-      //   return _platformPageRoute(child: GetStartedScreen());
+      case RouteName.getStartedScreen:
+        return _platformPageRoute(child: GetStartedScreen());
       case RouteName.userLanguagesSelectionScreen:
-        return _platformPageRoute(child: UserLanguagesSelectionScreen());
+        return _platformPageRoute(child: const UserLanguagesSelectionScreen());
       case RouteName.exchangeLanguagesSelectionScreen:
-        return _platformPageRoute(child: ExchangeLanguagesSelectionScreen());
+        return _platformPageRoute(
+            child: const ExchangeLanguagesSelectionScreen());
       case RouteName.interestsSelectionScreen:
-        return _platformPageRoute(child: InterestsSelectionScreen());
+        return _platformPageRoute(child: const InterestsSelectionScreen());
       case RouteName.ageSelectionScreen:
-        return _platformPageRoute(child: AgeSelectionScreen());
+        return _platformPageRoute(child: const AgeSelectionScreen());
+      //registration view route
+      case RouteName.loginScreen:
+        return _platformPageRoute(child: LoginScreen());
+      case RouteName.signUpScreen:
+        return _platformPageRoute(child: const SignupScreen());
+      case RouteName.otpScreen:
+        return _platformPageRoute(child: const OtpScreen());
+      case RouteName.forgotScreen:
+        return _platformPageRoute(child: const ForgotPasswordScreen());
+      case RouteName.dashboardView:
+        return _platformPageRoute(child: const DashboardView());
       default:
         return MaterialPageRoute(builder: (_) {
           return Scaffold(

@@ -1,8 +1,12 @@
 import 'package:babel_mate/res/constants.dart';
 import 'package:babel_mate/res/theme/light_theme.dart';
-import 'package:babel_mate/utils/routes/route_name.dart';
 import 'package:babel_mate/utils/routes/routes.dart';
-import 'package:flutter/material.dart';
+import 'package:babel_mate/utils/routes/routes_barrel_file.dart';
+import 'package:babel_mate/view/view_barrel_file.dart';
+import 'package:babel_mate/view_model/controllers/login/login_controller.dart';
+import 'package:babel_mate/view_model/controllers/onboarding/age_selection/age_selection_controller.dart';
+import 'package:babel_mate/view_model/controllers/otp/otp_controller.dart';
+import 'package:babel_mate/view_model/controllers/signup/signup_controller.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'firebase_options.dart';
@@ -18,7 +22,7 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -27,12 +31,24 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: applicationName,
-      debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      initialRoute: RouteName.splashScreen,
-      onGenerateRoute: Routes.generateRoute,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+            create: (context) => UserLanguagesSelectionController()),
+        ChangeNotifierProvider(
+            create: (context) => ExchangeLanguagesSelectionController()),
+        ChangeNotifierProvider(create: (context) => AgeSelectionController()),
+        ChangeNotifierProvider(create: (context) => SignUpController()),
+        ChangeNotifierProvider(create: (context) => LoginController()),
+        ChangeNotifierProvider(create: (context) => OtpController()),
+      ],
+      child: MaterialApp(
+        title: applicationName,
+        debugShowCheckedModeBanner: false,
+        theme: lightTheme,
+        initialRoute: RouteName.splashScreen,
+        onGenerateRoute: Routes.generateRoute,
+      ),
     );
   }
 }
