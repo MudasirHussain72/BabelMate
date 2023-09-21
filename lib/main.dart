@@ -5,6 +5,7 @@ import 'package:babel_mate/utils/routes/routes_barrel_file.dart';
 import 'package:babel_mate/view/view_barrel_file.dart';
 import 'package:babel_mate/view_model/controllers/login/login_controller.dart';
 import 'package:babel_mate/view_model/controllers/onboarding/age_selection/age_selection_controller.dart';
+import 'package:babel_mate/view_model/controllers/otp/otp_controller.dart';
 import 'package:babel_mate/view_model/controllers/signup/signup_controller.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => AgeSelectionController()),
         ChangeNotifierProvider(create: (context) => SignUpController()),
         ChangeNotifierProvider(create: (context) => LoginController()),
+        ChangeNotifierProvider(create: (context) => OtpController()),
       ],
       child: MaterialApp(
         title: applicationName,

@@ -1,8 +1,8 @@
 import 'package:babel_mate/view/view_barrel_file.dart';
 
-class SignupButtonWidget extends StatelessWidget {
+class OtpButtonWidget extends StatelessWidget {
   bool selected;
-  SignupButtonWidget({super.key, required this.selected});
+  OtpButtonWidget({super.key, required this.selected});
 
   @override
   Widget build(BuildContext context) {
@@ -10,9 +10,9 @@ class SignupButtonWidget extends StatelessWidget {
     return Consumer<SignUpController>(
         builder: (context, provider, child) => AnimatedPositioned(
             top: selected
-                ? MediaQuery.of(context).size.height * .54
+                ? MediaQuery.of(context).size.height * .30
                 : MediaQuery.of(context).size.height / .5,
-            right: MediaQuery.of(context).size.width / 3.3,
+            left: MediaQuery.of(context).size.width * .06,
             duration: const Duration(seconds: 2),
             curve: Curves.fastOutSlowIn,
             child: SizedBox(
@@ -20,10 +20,10 @@ class SignupButtonWidget extends StatelessWidget {
               width: width / 2.5,
               child: RoundButton(
                 loading: provider.loading,
-                title: 'SIGN UP',
+                title: 'Verify',
                 onPress: () {
                   if (provider.formKey.currentState!.validate()) {
-                    provider.signup(context);
+                    // provider.signup(context);
                   }
                 },
                 borderRadius: 50,

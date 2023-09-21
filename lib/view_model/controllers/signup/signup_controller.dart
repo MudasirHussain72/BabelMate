@@ -1,8 +1,5 @@
-import 'package:babel_mate/models/user_model/user_model.dart';
-import 'package:babel_mate/repository/signup_repository/signup_repository.dart';
 import 'package:babel_mate/utils/routes/routes_barrel_file.dart';
-import 'package:babel_mate/utils/utils.dart';
-import 'package:babel_mate/view_model/services/session_controller.dart';
+import '../view_model_barrel_file.dart';
 
 class SignUpController with ChangeNotifier {
   //repo reference from widget repository
@@ -36,23 +33,38 @@ class SignUpController with ChangeNotifier {
   Future<void> signup(BuildContext context) async {
     try {
       setLoading(true);
+
+      // Ensure that the text controllers have valid values
+      final email = emailController.text.trim();
+      final password = passwordController.text.trim();
+      final username = userNameController.text.trim();
+      final firstName = nameController.text.trim();
+      final lastName = nameController.text.trim();
+
+      if (email.isEmpty ||
+          password.isEmpty ||
+          username.isEmpty ||
+          firstName.isEmpty ||
+          lastName.isEmpty) {
+        Utils.toasstMessage('Please fill in all required fields');
+        setLoading(false);
+        return;
+      }
+
       var user = {
-        'email': emailController.text.trim(),
-        'password': passwordController.text.trim(),
-        'username': userNameController.text.trim(),
-        'first_name': nameController.text.trim(),
-        'last_name': nameController.text.trim(),
+        'email': email,
+        'password': password,
+        'username': username,
+        'first_name': firstName,
+        'last_name': lastName,
         "age": '19',
-        // "user_languages": ["urdu", "punjabi"], // List of strings
-        // "exchange_languages": ["french", "english"], // List of strings
-        // "interests": ["tech", "swimming"], // List of strings
       };
+
       final response = await _repository.signupApi(user);
       if (response != null) {
         if (response['message'] == 'success') {
           UserModel userData =
-              UserModel(
-                token: response['token'], userId: response['user_id']);
+              UserModel(token: response['token'], userId: response['user_id']);
           await SessionController.saveUserInPreference(userData, false);
           await SessionController.getUserFromPreference();
           print(response);
