@@ -32,3 +32,9 @@ export 'package:babel_mate/view/signup/widgets/signup_password_textfield_widget.
 export 'package:babel_mate/view/signup/widgets/signup_text_widget.dart';
 export 'package:babel_mate/view/signup/widgets/signup_username_textfield_widget.dart';
 export 'package:babel_mate/view_model/controllers/login/login_controller.dart';
+export 'package:babel_mate/view/otp/widgets/enter_otp_field_widget.dart';
+export 'package:babel_mate/view/otp/widgets/otp_button_widget.dart';
+export 'package:babel_mate/view/otp/widgets/otp_text_widget.dart';
+export 'package:babel_mate/view/otp/widgets/resend_code_widget.dart';
+export 'package:babel_mate/view_model/controllers/otp/otp_controller.dart';
+export 'package:flutter_otp_text_field/flutter_otp_text_field.dart';

@@ -6,7 +6,7 @@ class OtpTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<SignUpController>(
+    return Consumer<OtpController>(
         builder: (context, provider, child) => AnimatedPositioned(
               top: selected
                   ? MediaQuery.of(context).size.height * .02

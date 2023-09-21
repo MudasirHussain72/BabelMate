@@ -7,7 +7,7 @@ class OtpButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width * 1;
-    return Consumer<SignUpController>(
+    return Consumer<OtpController>(
         builder: (context, provider, child) => AnimatedPositioned(
             top: selected
                 ? MediaQuery.of(context).size.height * .30
@@ -23,7 +23,7 @@ class OtpButtonWidget extends StatelessWidget {
                 title: 'Verify',
                 onPress: () {
                   if (provider.formKey.currentState!.validate()) {
-                    // provider.signup(context);
+                    // provider.verify(context);
                   }
                 },
                 borderRadius: 50,

@@ -1,9 +1,4 @@
-import 'package:babel_mate/view/otp/widgets/enter_otp_field_widget.dart';
-import 'package:babel_mate/view/otp/widgets/otp_button_widget.dart';
-import 'package:babel_mate/view/otp/widgets/otp_text_widget.dart';
-import 'package:babel_mate/view/otp/widgets/resend_code_widget.dart';
 import 'package:babel_mate/view/view_barrel_file.dart';
-import 'package:babel_mate/view_model/controllers/otp/otp_controller.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
@@ -17,6 +12,8 @@ class _OtpScreenState extends State<OtpScreen> {
   @override
   void initState() {
     super.initState();
+    var provider = Provider.of<OtpController>(context, listen: false);
+    provider.sendOTP(context);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() => selected = true);
     });

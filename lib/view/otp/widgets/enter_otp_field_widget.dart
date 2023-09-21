@@ -1,5 +1,4 @@
 import 'package:babel_mate/view/view_barrel_file.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 class EnterOtpFieldWidget extends StatelessWidget {
   bool selected;
@@ -7,7 +6,7 @@ class EnterOtpFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<SignUpController>(
+    return Consumer<OtpController>(
         builder: (context, provider, child) => AnimatedPositioned(
               top: selected
                   ? MediaQuery.of(context).size.height * .14
@@ -23,22 +22,12 @@ class EnterOtpFieldWidget extends StatelessWidget {
                   borderColor: Color(0xFF512DA8),
                   //set to true to show as box or false to show as dash
                   showFieldAsBox: true,
+                  borderWidth: 1,
                   fieldWidth: MediaQuery.of(context).size.width * .155,
                   borderRadius: BorderRadius.all(Radius.circular(10)),
-                  //runs when a code is typed in
-                  onCodeChanged: (String code) {
-                    //handle validation or checks here
-                  },
                   //runs when every textfield is filled
                   onSubmit: (String verificationCode) {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: Text("Verification Code"),
-                            content: Text('Code entered is $verificationCode'),
-                          );
-                        });
+                    provider.setUserOtp(int.parse(verificationCode));
                   }, // end onSubmit
                 ),
               ),

@@ -63,8 +63,14 @@ class SignUpController with ChangeNotifier {
       final response = await _repository.signupApi(user);
       if (response != null) {
         if (response['message'] == 'success') {
-          UserModel userData =
-              UserModel(token: response['token'], userId: response['user_id']);
+          UserModel userData = UserModel(
+            token: response['token'],
+            userId: response['user_id'],
+            email: email,
+            username: username,
+            firstName: firstName,
+            lastName: lastName,
+          );
           await SessionController.saveUserInPreference(userData, false);
           await SessionController.getUserFromPreference();
           print(response);
