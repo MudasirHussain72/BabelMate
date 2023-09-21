@@ -1,3 +1,4 @@
+import 'package:babel_mate/view_model/services/session_controller.dart';
 import 'package:flutter/material.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -10,6 +11,13 @@ class OtpScreen extends StatefulWidget {
 class _OtpScreenState extends State<OtpScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(SessionController().user.userId.toString()),
+      ),
+      body: Center(
+        child: Text(SessionController().user.token.toString()),
+      ),
+    );
   }
 }

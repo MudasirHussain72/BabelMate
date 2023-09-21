@@ -25,7 +25,7 @@ class UserModel {
       this.interests,
       this.userId,
       this.token});
-
+      
   UserModel.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
     email = json['email'];
@@ -34,14 +34,24 @@ class UserModel {
     firstName = json['first_name'];
     lastName = json['last_name'];
     age = json['age'];
-    userLanguages = json['user_languages'].cast<String>();
-    exchangeLanguages = json['exchange_languages'].cast<String>();
-    interests = json['interests'].cast<String>();
+
+    // Check if these fields are present in the JSON data before casting.
+    if (json.containsKey('user_languages') && json['user_languages'] != null) {
+      userLanguages = json['user_languages'].cast<String>();
+    }
+    if (json.containsKey('exchange_languages') &&
+        json['exchange_languages'] != null) {
+      exchangeLanguages = json['exchange_languages'].cast<String>();
+    }
+    if (json.containsKey('interests') && json['interests'] != null) {
+      interests = json['interests'].cast<String>();
+    }
+
     userId = json['user_id'];
     token = json['token'];
   }
 
-  Map<String, dynamic> toJson() {
+  toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['_id'] = this.sId;
     data['email'] = this.email;

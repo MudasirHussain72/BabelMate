@@ -18,31 +18,21 @@ class SessionController {
     isLogin = false;
   }
 
-  // saving data into shared prefrences
-  static Future<void> saveUserInPreference(dynamic user) async {
-    SharedPreferenceClass.setValueBoolen('isLogin', true);
+  // saving user data into shared prefrences
+  static Future<void> saveUserInPreference(UserModel user,bool isLogin) async {
+    SharedPreferenceClass.setValueBoolen('isLogin', isLogin);
     SharedPreferenceClass.setValue('user', jsonEncode(user));
-  }
-
-  // saving user Login or not into shared prefrences
-  static Future<void> saveUserLoginTrueInPreference() async {
-    SharedPreferenceClass.setValueBoolen('isLogin', true);
   }
 
   //getting User Data from shared Preference
   static Future<void> getUserFromPreference() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-
     dynamic userData = prefs.getString("user");
-
     if (userData != null) {
-      // print(userData);
-      // var data = jsonDecode(userData);
       SessionController().user = UserModel.fromJson(jsonDecode(userData));
     } else {
       SessionController().user = UserModel(userId: '');
     }
-
     SessionController().isLogin = prefs.getBool('isLogin') ?? false;
   }
 
