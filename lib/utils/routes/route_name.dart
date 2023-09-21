@@ -15,5 +15,5 @@ class RouteName {
   static const String otpScreen = 'otpScreen';
 
   //dashboard
-  static const String dashboardScreen = 'dashboard_screen';
+  static const String dashboardView = 'dashboard_screen';
 }

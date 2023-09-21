@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:babel_mate/view/view_barrel_file.dart';
 
 class OtpButtonWidget extends StatelessWidget {
@@ -23,7 +25,9 @@ class OtpButtonWidget extends StatelessWidget {
                 title: 'Verify',
                 onPress: () {
                   if (provider.formKey.currentState!.validate()) {
-                    // provider.verify(context);
+                    // provider.setUserOtp(422750);
+                    // log(provider.otpFromServer.toString());
+                    provider.verifyOTP(context);
                   }
                 },
                 borderRadius: 50,

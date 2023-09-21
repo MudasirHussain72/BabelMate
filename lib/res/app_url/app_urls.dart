@@ -6,6 +6,7 @@ class AppUrl {
   static var signupApi = '$baseUrl/auth/signup';
   static var loginApi = '$baseUrl/auth/signin';
   static var sendVerificationCode = '$baseUrl/auth/otp';
+  static var getUserData = '$baseUrl/user/getuserdata';
   // static var deactivateAccountApi = '$baseUrl/auth/deactivate/';
   // static var deleteAccountApi = '$baseUrl/auth/deleted/';
   // static var logoutApi = '$baseUrl/helper/logout';
